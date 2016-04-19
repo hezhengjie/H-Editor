@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title><%=config.title%></title>
+        <link rel="stylesheet"  type="text/css" href="lib/bootstrap.min.css"/>
+        <link rel="stylesheet"  type="text/css" href="lib/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" type="text/css" href="lib/base.css"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<div id="home" class="page">
+		<div class="container-fluid">
+			<div class="row">
+
+                <%- include header_index.ejs %>
+                <div class="content">
+					<div class="content_wrap">
+                        <% if (post_items.length) { %>
+                        <% post_items.forEach(function(item){ %>
+                        <div class="post-item">
+                            <div class="post-top">
+                                <div class="post-title"><span><%=item.title%></span></div>
+                                <div class="post-meta">
+                                    <span>分类于 <a href="category/<%=item.category%>.html"> <%=item.category%></a></span>
+                                    <!--<span>阅读 <i>22</i> </span>-->
+                                    <!--<span>评论 <i>222</i> </span>-->
+                                </div>
+                                <div class="post-date">
+                                    <span class="day"><%=item.day%></span>
+                                    <br/>
+                                    <span class="month">
+                                        <%=item.month%></span>
+                                        <!--Nov</span>-->
+                                    <div class="ring-left"></div>
+                                    <div class="ring-right"></div>
+                                </div>
+                                <!--<span>2016-2-3</span>-->
+                            </div>
+                            <article class="post-body">
+                                <%-item.content-%>
+                               </article>
+                            <div class="post_bottom">
+                                <a class="read_more" href="<%=item.url%>">
+                                    more>>
+                                </a>
+                            </div>
+                        </div>
+                            <% }) %>
+                        <% } %>
+                    </div>
+
+				</div>
+
+            </div>
+            <button class="returnTop hide" onclick="pageScroll()"><i class="icon-arrow-up"></i></button>
+            <!--返回顶部-->
+		</div>
+		
+	</div>
+	<body>
+		
+		<script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script src="lib/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

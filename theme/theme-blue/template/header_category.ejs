@@ -1,0 +1,61 @@
+<div class="leftbox">
+    <div class="menu-dropleft">
+        <i class="icon-circle-left"></i>
+    </div>
+    <div class="authorgravatar">
+        <img src="../img/logo_3.png">
+    </div>
+    <div class="intro">
+        <h1><%=category%></h1>
+        <!--<h1>席小白的边缘世界</h1>-->
+    </div>
+    <nav class="menu clearfix">
+        <ul>
+
+            <li>
+                <h1><a href="../index.html"><b><i class="icon-home"></i></b><span>首页</span></a></h1>
+            </li>
+            <% if (config.category.length) { %>
+            <% config.category.forEach(function(item,index){ %>
+            <li class="<%=item==category?"active":null %>">
+                <h1><a href="<%=item %>.html"><b><i class="<%=config.category_icon[index]%>"></i></b><span><%=item %></span></a></h1>
+            </li>
+            <% })
+            }%>
+        </ul>
+    </nav>
+    <div class="icon clearfix">
+
+        <a href="<%=config.link.linkin%>"><i class="icon-linkedin"></i></a>
+        <a href="<%=config.link.email%>"><i class="icon-mail"></i></a>
+        <a href="<%=config.link.weibo%>"><i class="icon-pinterest2"></i></a>
+        <a href="<%=config.link.github%>"><i class="icon-github"></i></a>
+    </div>
+</div>
+<div class="leftbox_2 hide">
+    <div class="menu-dropright">
+        <i class="icon-circle-right"></i>
+    </div>
+
+    <nav class="menu clearfix">
+        <ul>
+            <li>
+                <h1><a href="../index.html"><i class="icon-home"></i></a></h1>
+            </li>
+            <% if (config.category.length) { %>
+            <% config.category.forEach(function(item,index){ %>
+            <li class="<%=item==category?"active":null %>">
+                <h1><a href="<%=item %>.html"><b><i class="<%=config.category_icon[index]%>"></i></b><span></span></a></h1>
+            </li>
+            <% })
+            }%>
+
+        </ul>
+    </nav>
+    <ul class="icon clearfix">
+        <li><a href="<%=config.link.linkin%>"><i class="icon-linkedin"></i></a></li>
+        <li> <a href="<%=config.link.email%>"><i class="icon-mail"></i></a></li>
+        <li><a href="<%=config.link.weibo%>"><i class="icon-pinterest2"></i></a></li>
+        <li><a href="<%=config.link.github%>"><i class="icon-github"></i></a></li>
+    </ul>
+</div>

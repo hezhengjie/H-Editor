@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title><%=config.title%></title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/fonts/font-awesome/css/font-awesome.css" />
+</head>
+
+<body>
+<div id="container">
+
+    <%- include header_category.ejs %>
+    <div id="content" class="content">
+        <article>
+            <div class="left_content">
+                <div id="recommend">
+                    <div class="tag_title">
+                        <div class="tag"><span><%=category%></span>
+                        </div>
+
+                    </div>
+                    <div class="recommend_content">
+                        <ul class="recommend_list">
+                            <% if (post_items.length) { %>
+                            <% post_items.forEach(function(item){ %>
+                            <li class="recommend_item">
+                                <div class="recommend_title">
+                                    <h1><%=item.title%></h1>
+                                </div>
+                                <div class="recommend_info">
+                                    <p>
+                                        <%-item.content-%>
+                                    </p>
+                                    <div class="btn_more">
+                                        <a  href="../<%=item.url%>" >more>></a>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="other">
+                                    <span class="time icon-time"> <%=item.day%>-<%=item.month%></span>
+                                    <span class="icon-tags"><a href="<%=item.category%>.html"><%=item.category%></a></span>
+
+
+                                </div>
+
+                            </li>
+                            <% }) %>
+                            <% } %>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <aside class="right_content">
+                <div class="link">
+                    <div class="tag_title">
+                        <div class="tag"><span>链接</span>
+                        </div>
+                    </div>
+                    <ul class="link_icon">
+                        <li><a href="<%=config.link.linkin%>"><span class="icon-phone-sign icon-4x"></span></a></li>
+                        <li><a href="<%=config.link.email%>"><span class="icon-facebook-sign icon-4x"></span></a></li>
+                        <li><a href="<%=config.link.weibo%>"><span class="icon-github-sign icon-4x"></span></a></li>
+                        <li><a href="<%=config.link.github%>"><span class="icon-pinterest-sign icon-4x"></span></a></li>
+                    </ul>
+                </div>
+            </aside>
+        </article>
+
+    </div>
+</div>
+
+</body>
+
+</html>

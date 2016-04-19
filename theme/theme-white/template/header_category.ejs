@@ -1,0 +1,21 @@
+<header>
+
+    <nav>
+        <div id="title"><span><%=config.title%></span></div>
+        <div id="nav">
+            <ul>
+                <li><a href="../index.html">
+                        <span>首页</span>
+                    </a>
+                </li>
+                <% if (config.category.length) { %>
+                <% config.category.forEach(function(item,index){ %>
+                <li><a href="<%=item %>.html"><span><%=item %></span>
+                    </a>
+                </li>
+                <% })
+                }%>
+            </ul>
+        </div>
+    </nav>
+</header>

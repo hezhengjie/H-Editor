@@ -1,0 +1,333 @@
+@charset "utf-8";
+/*
+ * 有些不可用类名比如.h为所有要使用:hover伪类的元素提供鼠标经过样式类
+ * 
+ * 
+ * */
+
+
+html{color:#444;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;_background-image:url(about:blank);_background-attachment:fixed;_text-overflow:ellipsis;/*IE6 模拟fixed定位抖动bug*/}
+/* 在基础样式中 body 尽量不控制背景颜色等属性，html,body不能设置高度100%会对iframe自适应产生错误 */
+body{word-wrap:break-word;word-break:break-all;line-height:1.5;font-family:SimSun, Arial, Helvetica, sans-serif;/*开发前强制IE字体为宋体尽量不造成在xp环境下由于没有雅黑字体产生行高不一致从而错位*/-webkit-font-smoothing:antialiased;/*mac 下字体抗锯齿*/}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
+
+/* 表单元素并不继承父级 font 的问题 */
+button,input,select,textarea{font-family:inherit;font-size:inherit;word-wrap:break-word;word-break:break-all;font-weight:inherit;*font-size:100%;outline:0 none;}
+
+/* 安卓输入框里会有外围文字的 bug */
+input,textarea{-webkit-user-modify:read-write-plaintext-only;}
+
+/* 禁止拉动修改文本域的大小 */
+textarea{resize:none;}
+
+/* IE67会比一般的按钮大的 bug */
+button{*overflow:visible;*font-size:90%;}
+
+/* 去掉各Table  cell 的边距并让其边框重合 */
+table{border-collapse:collapse;border-spacing:0;}
+
+/* 去除默认边框 */
+iframe,fieldset,img{border:0;}
+
+/* 原型换行 */
+pre{white-space:pre-wrap;}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe{display:block;}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym{border:0;font-variant:normal;}
+
+/* 一致的 del 样式 */
+del{text-decoration:line-through;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500;}
+
+/* 去掉列表前的标识, li 会继承 */
+ol,ul{list-style:none;}
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+q:before,q:after{content:'';}
+
+/* 统一上标和下标 */
+sub, sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,a{text-decoration:none;}
+
+/* 全局链接样式 */
+a{color:#2b84d0;outline:0 none;cursor:pointer;-ms-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;/*渐进增强*/}
+a[disabled]{color:graytext;}
+
+/* 浮动与清理浮动 */
+.fl,.fr{display:inline;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{*zoom:1;}
+.clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.sclear{clear:both;}
+
+/*定位*/
+.posrl0t0, .posrl0b0, .posal0t0, .posal0b0{left:0;}
+.posrr0t0, .posrr0b0, .posar0t0, .posar0b0{right:0;}
+.posrl0t0, .posrr0t0, .posal0t0, .posar0t0{top:0;}
+.posrl0b0, .posrr0b0, .posal0b0, .posar0b0{bottom:0;}
+.posrl0t0, .posrr0t0, .posrr0b0, .posrl0b0{position:relative;}
+.posal0t0, .posar0t0, .posar0b0, .posal0b0{position:absolute;}
+
+/* 元素垂直居中对齐 */
+.dis_ibvt{display:inline-block;*display:inline;*zoom:1;vertical-align:top;}
+.dis_ibvm,.vam{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;}
+.vam{width:0;height:100%;overflow:hidden;}
+
+/* 不受浮动影响的弹性布局 */
+.fluid{display:table-cell;width:2000em;*display:block;*width:auto;*overflow:hidden;*zoom:1;}
+
+/*三角箭头双选择器版
+.arrow_gray{border-color:#ddd;}
+.arrow_blue{border-color:#1d4993;}
+.arrow_white{border-color:#fff;}
+.arrowu7, .arrowr7, .arrowd7, .arrowl7,
+.arrowu6, .arrowr6, .arrowd6, .arrowl6,
+.arrowu5, .arrowr5, .arrowd5, .arrowl5,
+.arrowu4, .arrowr4, .arrowd4, .arrowl4{width:0;height:0;overflow:hidden;padding:0;font-size:0;line-height:0;display:inline-block;*display:inline;*zoom:1;border:0;}
+
+.arrowu7, .arrowr7, .arrowd7, .arrowl7{border-width:7px;}
+.arrowu6, .arrowr6, .arrowd6, .arrowl6{border-width:6px;}
+.arrowu5, .arrowr5, .arrowd5, .arrowl5{border-width:6px;}
+.arrowu4, .arrowr4, .arrowd4, .arrowl4{border-width:6px;}
+
+.arrowu7, .arrowu6, .arrowu5, .arrowu4, .arrowd7, .arrowd6, .arrowd5, .arrowd4{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;}
+.arrowu7, .arrowu6, .arrowu5, .arrowu4{border-bottom-style:solid;border-top:0 none;}
+.arrowr7, .arrowr6, .arrowr5, .arrowr4, .arrowl7, .arrowl6, .arrowl5, .arrowl4{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;}
+.arrowr7, .arrowr6, .arrowr5, .arrowr4{border-left-style:solid;border-right:0 none;}
+.arrowd7, .arrowd6, .arrowd5, .arrowd4{border-top-style:solid;border-bottom:0 none;}
+.arrowl7, .arrowl6, .arrowl5, .arrowl4{border-right-style:solid;border-left:0 none;}
+*/
+
+/*三角箭头三选择器版*/
+.arrow_up,.arrow_right,.arrow_down,.arrow_left{width:0;height:0;overflow:hidden;padding:0;font-size:0;line-height:0;display:inline-block;*display:inline;*zoom:1;border:0;}
+/*箭头颜色与大小在此处写，一定要写在箭头方向之前*/
+.arrow_gray{border-color:#ddd;}
+.arrow_blue{border-color:#1d4993;}
+.arrow_white{border-color:#fff;}
+.arrow7{border-width:7px;}
+.arrow6{border-width:6px;}
+.arrow5{border-width:5px;}
+.arrow4{border-width:4px;}
+/*箭头方向控制，边框风格与边框颜色必须分开写，不然在IE67与其他浏览器相差太大*/
+.arrow_up, .arrow_down{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;}
+.arrow_up{border-bottom-style:solid;border-top:0 none;}
+.arrow_right, .arrow_left{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;}
+.arrow_right{border-left-style:solid;border-right:0 none;}
+.arrow_down{border-top-style:solid;border-bottom:0 none;}
+.arrow_left{border-right-style:solid;border-left:0 none;}
+
+
+/* 字体尺寸大小（主要用于修复inline，inline-block元素的空白间距） */
+.fs0{font-size:0;}
+body,.resetfs{font-size:12px;}/*重设字体*/
+
+/* 雅黑字体 */
+.f_yh{font-family:'Microsoft YaHei',Arial,Helvetica,sans-serif;}
+
+/* 字体颜色 */
+.error{color:#ee0000;}
+.pass{color:#39b130;}
+.gray{color:#666;}
+.orange{color:#f60;}
+
+/* 单行文字溢出省略号 */
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
+
+/* 最小页面宽度 */
+.mwidth960{_unicode-bidi:expression(function(e){var s=e.style,d=document.documentElement;s.unicodeBidi='normal';s.width = d.clientWidth<960?"960px":"";window.attachEvent('onresize',function(){s.width = d.clientWidth<960?"960px":""});
+}(this));min-width:960px;}
+/* 主体居中布局 */
+.cpage{width:960px;margin:0 auto;}
+
+/* IE6 隐藏 select 必须样式（包含该iframe的元素必须设置定位） */
+iframe.hideselect4ie6{display:none;_display:block;position:absolute;left:0;top:0;z-index:-1;opacity:0;filter:alpha(opacity=0);cursor:default;}
+
+/* 头中尾定位，导航必定在上 */
+.relative, #topwrap, #middle, #footer{position:relative;left:0;top:0;}
+/*固定的头部*/
+.fixheader{position:fixed;left:0;top:0;_position:absolute;z-index:3;width:100%;box-shadow:0 7px 7px rgba(0,0,0,.1);_top:expression(eval(document.documentElement.scrollTop));}
+.fixheader .hideselect4ie6{height:100%;}
+.ie_gradient_fix{position:absolute;z-index:-1;top:0;left:0;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');}
+:root .ie_gradient_fix{background:rgba(62,148,221,.85);filter:none;}
+.fixheader .ie_gradient_fix{height:40px;}
+.logo{margin-right:10px;}
+.logo a{display:block;text-indent:-100em;background:url(../image/logo.jpg) left center no-repeat;width:100px;}
+.fixheader, .logo a{height:40px;}
+
+.ico{display:inline-block;*display:inline;*zoom:1;width:16px;height:16px;}
+.nav{}
+.nav .nav_item{display:inline-block;*display:inline;*zoom:1;position:relative;left:0;top:0;vertical-align:top;}
+.nav .nav_item .nav_header{font-size:0;}
+.nav .nav_item .nav_header a{display:inline-block;*display:inline;*zoom:1;color:#fff;line-height:40px;padding:0 5px;_padding:12px 5px;font-size:12px;}
+.nav .nav_item .nav_header a.curr{background-color:rgb(95, 178, 243);}
+.nav .nav_item .nav_header a:hover{background:#fff;color:#404040;text-decoration:none;}
+.nav .nav_item .nav_header a .ico{margin-right:5px;background-image:url(../image/sprite.png);}
+.nav .nav_item .nav_header a .ico_icenter{background-position:-690px -150px;}
+.nav .nav_item .nav_header a:hover .ico_icenter{background-position:-740px -75px;}
+.nav .nav_item .nav_header a .ico_homepage{background-position:-715px 0;}
+.nav .nav_item .nav_header a:hover .ico_homepage{background-position:-740px -125px;}
+.nav .nav_item .nav_header a .ico, .nav .nav_item .nav_header a span{vertical-align:middle;}
+.nav .nav_item .nav_header a .arrow_down{margin-left:3px;-webkit-transition:.3s ease-in;-moz-transition:.3s ease-in;-o-transition:.3s ease-in;-ms-transition:.3s ease-in;transition:.3s ease-in;}
+.nav .nav_item .nav_header a:hover .arrow_down{border-bottom:4px solid #ddd;border-top:0 none;}
+:root .nav .nav_item .nav_header a:hover .arrow_down{border-bottom:0 none;border-top:4px solid #ddd;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(0);transform:rotate(180deg);}
+.nav .nav_item .nav_body{display:none;}
+.nav .nav_item:hover .nav_body, .nav li.hover .nav_body{display:block;}
+
+
+.top{_zoom:1;/*IE6必须触发layout否则其子元素会受padding的影响*/padding-top:55px;}
+
+#topwrap{z-index:2;}
+#middle{z-index:1;}
+/*建议将margin设置到middle中间部分而不设置到footer中*/
+#footer{z-index:0;}
+
+/*返回顶部*/
+#gotop{position:fixed;right:0;bottom:20px;_position:absolute;z-index:3;width:30px;height:30px;overflow:hidden;text-indent:-100px;border-radius:3px;background-image:url(about:blank);/*修复大部分IE与透明度有关（透明度比如alpha，png，gradient为透明时被穿透）的bug*/background-color:rgba(62,148,221,.85);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-50));_left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-50));}
+:root #gotop{filter:none;-ms-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
+#gotop:hover{background-color:rgba(255,0,0,.55);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#90ff0000',endColorstr='#90ff0000');}
+:root #gotop:hover{filter:none;}
+
+/* 弹框层级应高 */
+.popwrap{display:none;position:fixed;_position:absolute;left:0;top:0;z-index:10000;zoom:1;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f000000',endColorstr='#7f000000');_height:expression(document.documentElement.clientHeight);_top:50%;_margin-top:expression(document.documentElement.scrollTop-parseInt(document.documentElement.clientHeight/2)+'px');}
+:root .popwrap{background:rgba(0,0,0,.5);filter:none;}
+/* 纯 css 居中弹出层样式 */
+.popwrap .hideselect4ie6{width:100%;height:100%;}
+.popup{position:absolute;left:0;top:0;/*绝对定位的元素在IE6下不给left，top时会接在其他元素下面的bug*/width:100%;height:100%;font-size:0;text-align:center;}
+.dialog{width:500px;font-size:12px;text-align:left;background:#fff;}
+.popheader{height:36px;line-height:36px;position:relative;left:0;top:0;padding:0 36px 0 0;}
+.popheader h6{cursor:move;padding:0 10px;background:#3e94dd;color:#fff;}
+.popheader .close{position:absolute;right:0;top:0;width:36px;height:36px;background:#fff;text-align:center;font-size:20px;color:#2b84d0;cursor:pointer;}
+.popbody{height:200px;overflow-y:auto;}
+.popmargin{padding:10px;}
+.popfooter{padding:10px 0;border-top:1px solid #ccc;background:#f8f8f8;}
+.popfooter a{margin-right:10px;}
+/* 编辑器有可能有定位因此需独立定义层级 */
+
+
+
+/* 显示样式靠后确保 js 操作时正常应用（仅应用单类 css ） */
+.bshow{display:block;}
+.lshow{display:list-item;}
+.ishow{display:inline-block;*display:inline;*zoom:1;}
+.invisible{visibility:hidden;}
+.hide{display:none;}
+
+/* IE6 链接下的元素不显示手型 */
+a *{cursor:pointer;}
+a:hover{text-decoration:underline;color:#d19911;}
+
+/* 不可用状态 */
+.disabled{filter:alpha(opacity=50);opacity:.5;cursor:not-allowed;}
+
+/*阴影实例*/
+.shadow20140411{box-shadow:1px 3px 5px #666;}
+/*半透明背景*/
+.halfalpha20140411{background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
+/*多滤镜用法*/
+.mulfilters20140425{filter:progid:DXImageTransform.Microsoft.alpha(opacity=20), progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
+/*渐变*/
+.gradient20140411{
+background-image:url(about:blank);
+background-image:-ms-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image:-moz-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image:-o-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image:-webkit-gradient(linear, left top, right top, color-stop(0, #ffffff), color-stop(.9, #ffffff), color-stop(1, #00a3ef));/*for safari*/
+background-image:-webkit-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image:linear-gradient(to right, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff00a3ef', GradientType=1);/*1水平渐变，0垂直，defalut 0*/
+/*透明度相关滤镜在IE下使用时尽量只用于最里层元素，如果用于父元素，而子元素需要在父元素之外显示比如子元素定位(子元素溢出)，使用透明度相关滤镜会造成父元素形成overflow:hidden的效果，即使强制使用overflow:visible也无用*/
+*zoom:1;/*渐变元素若未定义宽高需要触发layout*/}
+
+/* hack实例 */
+.hack20140411{background-color:#000;/*一般浏览器*/
+background-color:#f00\0;/*for IE6-11*/
+background-color:#f0f\9;/*for IE6-10*/
+*background-color:#0ff;/*for IE6-7*/
+_background-color:#00f;/*for IE6*/}
+@media \0screen{/*for IE8*/
+.hack20140411{width:30px;background-color:#ff0;}
+}
+@media screen and (min-width:0){/*forIE9-11，其他内核。预先规划css集中化定义。*/
+.hack20140411{border:1px solid #f00;}
+}
+/*forIE9-11，其他内核*/
+:root .hack20140411{}
+
+/* 气泡示例 */
+.bubbles{position:relative;left:0;top:0;border:2px solid #09f;padding:30px;_zoom:1;/*IE6必须触发layout*/margin:0 50px 20px;}
+.bubble_border, .bubble_bg{display:block;position:absolute;right:0;top:10px;z-index:1;height:0;width:0;overflow:hidden;font-size:0;line-height:0;border:10px dashed transparent;}
+.bubble1 .bubble_border{right:-20px;_right:-21px;border-left-style:solid;border-left-color:#09f;/*正角*/}
+.bubble1 .bubble_bg{right:-17px;_right:-18px;border-left-style:solid;border-left-color:#fff;/*正角*/}
+.bubble2 .bubble_border{right:-20px;_right:-21px;border-width:0 0 15px;border-left:20px solid #09f;/*斜角*/}
+.bubble2 .bubble_bg{top:12px;right:-17px;_right:-18px;border-width:0 3px 27px 36px;border-left:36px solid #fff;/*斜角*/}
+
+
+
+/* 多背景多类处理 */
+.chapters ul li a[class*=odd]{background-position:left bottom;}
+.chapters ul li a.intime{background-position-x:-74px;color:#444;}
+.chapters ul li a[class*=intime]{background-position:-74px top;}
+.chapters ul li a[class*=odd][class*=intime]{background-position:-74px bottom;}
+.chapters ul li a{display:block;width:60px;height:60px;padding:7px 7px 17px;overflow:hidden;background-image:url(../images/chapter_bg.gif);background-repeat:no-repeat;margin-bottom:30px;background-position:left top;background-position-x:left;word-break:break-all;}
+.chapters ul li a.on{background-position-x:-148px;color:#444;}
+.chapters ul li a[class*=on]{background-position:right top;}
+.chapters ul li a[class*=odd][class*=on]{background-position:-148px bottom;}
+.chapters ul li a.odd{float:right;padding:17px 7px 7px;background-position-y:bottom;}
+.chapters ul li a:hover{text-decoration:none;}
+
+
+
+
+div.canhover:hover, div.hover{background:#0f0;}
+.testhover{font-size: 100px;}
+/*
+ *.canhover添加后再利用.h类可使用鼠标经过的样式 
+ * 曾经想过用html标签来委托事件，但是最后被我否定了，因为有的元素占位比父元素或者祖辈元素大(比如定位元素)
+ * 要想父辈祖辈元素使用onhover必须去循环判断鼠标经过的当前target(srcElement)祖辈或者父辈元素是否具有canhover类，
+ * 这样就更耗费性能了，因此将事件代理否决
+ * */
+/*.canhover{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var h=e.getAttribute('ie6hover'),r=new RegExp('(^|\\\\s+)'+h+'(\\\\s+|$)');e.attachEvent("onmouseenter",function(){if(!r.test(e.className)){e.className+=" "+h}});e.attachEvent("onmouseleave",function(){e.className=e.className.replace(r,' ')})}}(this));}*/
+.canhover{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var h=e.getAttribute('ie6hover'),r=new RegExp('\\\\b'+h+'\\\\b');e.attachEvent("onmouseenter",function(){if(!r.test(e.className)){e.className=e.className.replace(/\\\s*$/,' ')+h}});e.attachEvent("onmouseleave",function(){e.className=e.className.replace(r,'')})}}(this));}
+.selectwrap{width:100px;height:25px;background:#f00;padding:3px;float:left;}
+.selectwrap select{width:90px;
+*unicode-bidi:expression(function(e){
+	var s = e.style, w = e.clientWidth;
+	s.unicodeBidi='normal';
+	e.attachEvent('onbeforeactivate', function(){
+		e.parentNode.style.position='relative';s.width='auto';s.position='absolute';
+	});
+	e.attachEvent('onblur', function(){
+		e.parentNode.style.position='static';s.width=w;s.position='static';
+	});
+	e.attachEvent('onchange', function(){
+		e.blur();
+	});
+}(this));
+}
+/*e.attachEvent('onchange', function(){
+		e.blur();
+	});*/
+select.hasdisabledoptions{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){e.setAttribute("selectIndex",e.selectedIndex);e.attachEvent("onfocusin",function(){var s=e.options;for(var i=0,l=s.length;i<l;i++){if(s[i].disabled){s[i].style.color='graytext';}}});e.attachEvent("onchange",function(){if(e.options[e.selectedIndex].disabled){e.selectedIndex=e.getAttribute("selectIndex");}e.setAttribute("selectIndex",e.selectedIndex);});}}(this));}
+/*IE6图片最大宽高及IE图片缩小失真，有锯齿的 bug，使用时请注意为IE6特别添加_max-width、_max-height指定多少px，且图片不可定宽高，用法示例：img{_max-width:100px;_max-height:100px;}*/
+.xhide{overflow-x:hidden;}
+.yhide{overflow-y:hidden;}
+img{max-width:100%;max-height:100%;-ms-interpolation-mode:bicubic;}
+/*固定宽高元素下的图片*/
+.imgbox img{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var i,c=e.parentNode.currentStyle,m=parseInt(c.width),n=parseInt(c.height),l=function(){var j=m/i.width,k=n/i.height;if(j<1||k<1){if(j<=k){e.style.width='100%'}else{e.style.height='100%'}}c=m=n=j=k=i.onload=i=null;window.CollectGarbage&&setTimeout(window.CollectGarbage,1)};i=new Image();i.onload=l;i.src=e.src}}(this));
+/*非固定宽高，文章类图片max-width:100%;height:aito;其所在元素宽度固定*/
+.article img{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var c=e.currentStyle,i,m=c['max-width']!='100%'&&parseInt(c['max-width']||0),n=c['max-height']!='100%'&&parseInt(c['max-height']||0),l=function(){var w=i.width,h=i.height,j=m/w,k=n/h;if(!m){if(k<1){e.height=h*k}}else if(!n){if(j<1){e.width=w*j}}else if(j<1||k<1){if(j<=k){e.width=w*j}else{e.height=h*k}}c=m=n=w=h=j=k=i.onload=i=null;window.CollectGarbage&&setTimeout(window.CollectGarbage,1)};if(m||n){i=new Image();i.onload=l;i.src=e.src}}}(this));}

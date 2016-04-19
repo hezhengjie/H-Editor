@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title><%=config.title%></title>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/base.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+</head>
+<div id="page">
+<div class="container-fluid">
+<div class="row">
+    <%- include header_page.ejs %>
+<div class="article center-block">
+    <article>
+        <div class="article-top">
+            <h1 class="article-title"><%= page.title %></h1>
+
+            <div class="article-meta">
+                <span>发表于 <i> <%= page.date %></i></span>
+                <span>分类于 <a href="../category/<%= page.category %>.html"> <%= page.category %></a></span>
+                <!--<span>阅读 <i>22</i> </span>-->
+                <!--<span>评论 <i>222</i> </span>-->
+            </div>
+        </div>
+        <div class="show-content">
+            <%- page.content-%>
+        </div>
+
+    </article>
+    <!--<div id="comments" class="comment-list clearfix">-->
+        <!--<div class="comment-head clearfix">-->
+            <!--3条评论-->
+        <!--</div>-->
+        <!--<div id="comment-list">-->
+            <!--<div class="note-comment clearfix" id="comment-1385555">-->
+                <!--<div class="comment-content">-->
+                    <!--<div class="meta-top">-->
+                        <!--<a class="avatar" href="/users/78cf87cf3434">-->
+                            <!--<img src="http://upload.jianshu.io/users/upload_avatars/1504958/2fea52825fed.jpg?imageMogr/thumbnail/90x90/quality/100"-->
+                                 <!--alt="100">-->
+                        <!--</a>-->
+
+                        <!--<p>-->
+                            <!--<a class="author-name" href="/users/78cf87cf3434">谁又知道呢</a>-->
+                        <!--</p>-->
+        <!--<span class="reply-time">-->
+          <!--<small>2 楼 ·</small>-->
+          <!--<a href="/p/f2d7e57d2d49/comments/1385555#comment-1385555">2016.02.03 18:29</a></span>-->
+                    <!--</div>-->
+                    <!--<p>好棒啊<img src="http://assets.jianshu.io/assets/emojis/heart_eyes.png" alt=":heart_eyes:"-->
+                               <!--title=":heart_eyes:" class="emoji" height="20" width="20"></p>-->
+
+                    <!--<div class="comment-footer clearfix text-right">-->
+                        <!--<a data-id="1385555" data-nickname="谁又知道呢" class="reply" href="javascript:void(0)">回复</a>-->
+                    <!--</div>-->
+                    <!--<div class="child-comment-list hide">-->
+
+                        <!--<div data-state="remaining-child-comments"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="note-comment clearfix" >-->
+                <!--<div class="comment-content">-->
+                    <!--<div class="meta-top">-->
+                        <!--<a class="avatar" href="/users/78cf87cf3434">-->
+                            <!--<img src="http://upload.jianshu.io/users/upload_avatars/1504958/2fea52825fed.jpg?imageMogr/thumbnail/90x90/quality/100"-->
+                                 <!--alt="100">-->
+                        <!--</a>-->
+
+                        <!--<p>-->
+                            <!--<a class="author-name" href="/users/78cf87cf3434">谁又知道呢</a>-->
+                        <!--</p>-->
+        <!--<span class="reply-time">-->
+          <!--<small>2 楼 ·</small>-->
+          <!--<a href="/p/f2d7e57d2d49/comments/1385555#comment-1385555">2016.02.03 18:29</a></span>-->
+                    <!--</div>-->
+                    <!--<p>好棒啊<img src="http://assets.jianshu.io/assets/emojis/heart_eyes.png" alt=":heart_eyes:"-->
+                               <!--title=":heart_eyes:" class="emoji" height="20" width="20"></p>-->
+
+                    <!--<div class="comment-footer clearfix text-right">-->
+                        <!--<a data-id="1385555" data-nickname="谁又知道呢" class="reply" href="javascript:void(0)">回复</a>-->
+                    <!--</div>-->
+                    <!--<div class="child-comment-list hide">-->
+
+                        <!--<div data-state="remaining-child-comments"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="note-comment clearfix" >-->
+                <!--<div class="comment-content">-->
+                    <!--<div class="meta-top">-->
+                        <!--<a class="avatar" href="/users/78cf87cf3434">-->
+                            <!--<img src="http://upload.jianshu.io/users/upload_avatars/1504958/2fea52825fed.jpg?imageMogr/thumbnail/90x90/quality/100"-->
+                                 <!--alt="100">-->
+                        <!--</a>-->
+
+                        <!--<p>-->
+                            <!--<a class="author-name" href="/users/78cf87cf3434">谁又知道呢</a>-->
+                        <!--</p>-->
+        <!--<span class="reply-time">-->
+          <!--<small>2 楼 ·</small>-->
+          <!--<a href="/p/f2d7e57d2d49/comments/1385555#comment-1385555">2016.02.03 18:29</a></span>-->
+                    <!--</div>-->
+                    <!--<p>好棒啊<img src="http://assets.jianshu.io/assets/emojis/heart_eyes.png" alt=":heart_eyes:"-->
+                               <!--title=":heart_eyes:" class="emoji" height="20" width="20"></p>-->
+
+                    <!--<div class="comment-footer clearfix text-right">-->
+                        <!--<a data-id="1385555" data-nickname="谁又知道呢" class="reply" href="javascript:void(0)">回复</a>-->
+                    <!--</div>-->
+                    <!--<div class="child-comment-list hide">-->
+
+                        <!--<div data-state="remaining-child-comments"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+        <!--</div>-->
+        <!--<form class="new_comment" id="new_comment" data-type="json" action="/notes/2891245/comments"-->
+              <!--accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden">-->
+
+            <!--<div class="comment-text">-->
+                <!--<textarea maxlength="2000" placeholder="写下你的评论…" class="mousetrap" name="comment[content]"-->
+                          <!--id="comment_content"></textarea>-->
+
+                <!--<div>-->
+                    <!--<input name="commit" value="发 表" class="btn btn-info" data-disable-with="提交中..." type="submit">-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+</div>
+<button class="returnTop hide" onclick="pageScroll()"><i class="icon-arrow-up"></i></button>
+<!--返回顶部-->
+</div>
+</div>
+
+</div>
+<body>
+
+<script src="../lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../lib/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
